@@ -29,7 +29,7 @@ $db['default'] = array(
 /*
 
 DB
-username : u8939991_kua
-password : k@wmsz2*Wj_O
+username : u8939991_evazisw
+password : 5?O4AtVp*+bI
 
 */
