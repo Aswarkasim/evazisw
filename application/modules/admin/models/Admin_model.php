@@ -15,6 +15,26 @@ class Admin_model extends CI_Model
     return $this->db->get()->result();
   }
 
+  function listPenyaluran()
+  {
+    $this->db->select('tbl_penyaluran.*,
+                            tbl_desa.nama_desa')
+      ->from('tbl_penyaluran')
+      ->join('tbl_desa', 'tbl_desa.id_desa = tbl_penyaluran.id_desa', 'LEFT')
+      ->order_by('tbl_penyaluran.date_created', 'DESC');
+    return $this->db->get()->result();
+  }
+
+  function listMustahik()
+  {
+    $this->db->select('tbl_mustahik.*,
+                            tbl_desa.nama_desa')
+      ->from('tbl_mustahik')
+      ->join('tbl_desa', 'tbl_desa.id_desa = tbl_mustahik.id_desa', 'LEFT')
+      ->order_by('tbl_mustahik.date_created', 'DESC');
+    return $this->db->get()->result();
+  }
+
   function listDaftar()
   {
     $this->db->select('tbl_daftar.*,

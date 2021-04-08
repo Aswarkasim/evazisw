@@ -22,6 +22,41 @@ $saran = $this->Crud_model->listingOneAll('tbl_saran', 'is_read', '0');
                         ?>"><a href="<?php echo base_url('admin/dashboard')
                                         ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
+            <li class="treeview <?php if ($this->uri->segment(2) == "profil") {
+                                    echo "active";
+                                } ?>">
+                <a href="#"><i class="fa fa-building"></i> <span>Zis</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="<?php if ($this->uri->segment(2) == "penyetoran") {
+                                    echo "active";
+                                } ?>"><a href="<?= base_url('admin/penyetoran') ?>">Penyetoran</a></li>
+
+                    <li class="<?php if ($this->uri->segment(3) == "penyaluran") {
+                                    echo "active";
+                                } ?>"><a href="<?= base_url('admin/penyaluran') ?>">Penyaluran</a></li>
+
+                    <li class="<?php if ($this->uri->segment(3) == "mustahik") {
+                                    echo "active";
+                                } ?>"><a href="<?= base_url('admin/mustahik') ?>">Mustahik</a></li>
+
+                    <li class="<?php if ($this->uri->segment(3) == "desa") {
+                                    echo "active";
+                                } ?>"><a href="<?= base_url('admin/desa') ?>">Desa</a></li>
+                </ul>
+            </li>
+
+            <li class="<?php if ($this->uri->segment(2) == "muzakki") {
+                            echo "active";
+                        }
+                        ?>"><a href="<?php echo base_url('admin/muzakki')
+                                        ?>"><i class="fa fa-users"></i> <span>Muzakki</span>
+                </a></li>
+
+
             <li class="<?php if ($this->uri->segment(2) == "saran") {
                             echo "active";
                         }
