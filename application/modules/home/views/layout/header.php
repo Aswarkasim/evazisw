@@ -59,7 +59,7 @@
                             } ?>"><a class="nav-link" href="<?= base_url('home/saran'); ?>"><strong> Hubungi Kami</strong></a></li>
 
       </ul>
-      <form class="form-inline my-2 my-lg-0">
+      <!-- <form class="form-inline my-2 my-lg-0">
 
 
         <?php if ($this->session->userdata('id_user')) { ?>
@@ -72,7 +72,7 @@
             <i class="fa fa-sign-in"></i> Login
           </a>
         <?php } ?>
-      </form>
+      </form> -->
     </div>
   </div>
 </nav>
