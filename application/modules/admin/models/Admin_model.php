@@ -35,24 +35,26 @@ class Admin_model extends CI_Model
     return $this->db->get()->result();
   }
 
-  function listDaftar()
+  function listWaqaf()
   {
-    $this->db->select('tbl_daftar.*,
-                            tbl_user.namalengkap')
-      ->from('tbl_daftar')
-      ->join('tbl_user', 'tbl_user.id_user = tbl_daftar.id_user', 'LEFT');
+    $this->db->select('tbl_waqaf.*,
+                            tbl_desa.nama_desa')
+      ->from('tbl_waqaf')
+      ->join('tbl_desa', 'tbl_desa.id_desa = tbl_waqaf.id_desa', 'LEFT')
+      ->order_by('tbl_waqaf.date_created', 'DESC');
     return $this->db->get()->result();
   }
 
-  function detailDaftar($id_daftar)
+  function listZis()
   {
-    $this->db->select('tbl_daftar.*,
-                            tbl_user.*')
-      ->from('tbl_daftar')
-      ->join('tbl_user', 'tbl_user.id_user = tbl_daftar.id_user', 'LEFT')
-      ->where('id_daftar', $id_daftar);
-    return $this->db->get()->row();
+    $this->db->select('tbl_zis.*,
+                            tbl_muzakki.nama_muzakki')
+      ->from('tbl_zis')
+      ->join('tbl_muzakki', 'tbl_muzakki.id_muzakki = tbl_zis.id_muzakki', 'LEFT')
+      ->order_by('tbl_zis.date_created', 'DESC');
+    return $this->db->get()->result();
   }
+
 
   function detailBerita($slug)
   {

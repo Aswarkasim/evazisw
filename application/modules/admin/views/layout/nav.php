@@ -31,9 +31,9 @@ $saran = $this->Crud_model->listingOneAll('tbl_saran', 'is_read', '0');
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="<?php if ($this->uri->segment(2) == "penyetoran") {
+                    <li class="<?php if ($this->uri->segment(2) == "zis") {
                                     echo "active";
-                                } ?>"><a href="<?= base_url('admin/penyetoran') ?>">Penyetoran</a></li>
+                                } ?>"><a href="<?= base_url('admin/zis') ?>">Penyetoran</a></li>
 
                     <li class="<?php if ($this->uri->segment(3) == "penyaluran") {
                                     echo "active";
@@ -48,6 +48,14 @@ $saran = $this->Crud_model->listingOneAll('tbl_saran', 'is_read', '0');
                                 } ?>"><a href="<?= base_url('admin/desa') ?>">Desa</a></li>
                 </ul>
             </li>
+
+            <li class="<?php if ($this->uri->segment(2) == "waqaf") {
+                            echo "active";
+                        }
+                        ?>"><a href="<?php echo base_url('admin/waqaf')
+                                        ?>"><i class="fa fa-area-chart"></i> <span>Waqaf</span>
+                </a></li>
+
 
             <li class="<?php if ($this->uri->segment(2) == "muzakki") {
                             echo "active";
@@ -122,9 +130,9 @@ $saran = $this->Crud_model->listingOneAll('tbl_saran', 'is_read', '0');
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="<?php if ($this->uri->segment(2) == "user") {
-                                    echo "active";
-                                } ?>"><a href="<?= base_url('admin/user') ?>">User</a></li>
+                    <!-- <li class="<?php if ($this->uri->segment(2) == "user") {
+                                        echo "active";
+                                    } ?>"><a href="<?= base_url('admin/user') ?>">User</a></li> -->
                     <li class="<?php if ($this->uri->segment(2) == "admin") {
                                     echo "active";
                                 } ?>"><a href="<?= base_url('admin/admin') ?>">Admin</a></li>

@@ -11,6 +11,13 @@
       <hr>
 
       <form action="<?= base_url('home/saran/kirim'); ?>" method="POST">
+
+        <div class="form-group">
+          <div class="label"><strong> Nama Lengkap</strong></div>
+          <input type="text" class="form-control" name="namalengkap" placeholder="Nama Lengkap">
+        </div>
+
+
         <div class="form-group">
           <div class="label"><strong> Saran</strong></div>
           <textarea name="isi_saran" class="form-control" id="editor" cols="30" rows="10"></textarea>

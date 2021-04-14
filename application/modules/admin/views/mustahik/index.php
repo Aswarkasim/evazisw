@@ -2,7 +2,11 @@
 
 <style>
     .rp {
-        font-size: 8px;
+        font-size: 10px;
+    }
+
+    .nama-desa {
+        font-size: 12px;
     }
 </style>
 
@@ -24,7 +28,7 @@
 
                 <div class="table-responsive">
 
-                    <table class="table table-responsive DataTable">
+                    <table class="table table-bordered table-responsive DataTable">
 
                         <thead>
 
@@ -65,7 +69,7 @@
                             foreach ($mustahik as $row) { ?>
                                 <tr>
                                     <td class="rp"><?= $no++; ?></td>
-                                    <td class="rp"><?= $row->nama_desa; ?></td>
+                                    <td class="nama-desa"><?= $row->nama_desa; ?></td>
 
                                     <td class="rp"><?= 'Rp. ' . nominal($row->rp_fakir); ?></td>
                                     <td class="rp"><?= 'Rp. ' . nominal($row->jlh_fakir); ?></td>

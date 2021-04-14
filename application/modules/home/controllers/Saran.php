@@ -17,7 +17,7 @@ class Saran extends CI_Controller
 
   function kirim()
   {
-    is_logged_in_user();
+    // is_logged_in_user();
 
     $this->load->helper('string');
 
@@ -28,6 +28,7 @@ class Saran extends CI_Controller
     $data = [
       'id_saran'   => random_string(),
       'id_user'  => $this->session->userdata('id_user'),
+      'namalengkap'  => $this->input->post('namalengkap'),
       'isi_saran'  => $this->input->post('isi_saran'),
     ];
     $this->Crud_model->add('tbl_saran', $data);

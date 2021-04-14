@@ -13,7 +13,8 @@ class Saran extends CI_Controller
 
   public function index()
   {
-    $saran = $this->AM->listSaran();
+    // $saran = $this->AM->listSaran();
+    $saran = $this->Crud_model->listing('tbl_saran');
     $data = [
       'saran'   => $saran,
       'content'  => 'admin/saran/index'
@@ -24,8 +25,9 @@ class Saran extends CI_Controller
   function detail($id_saran)
   {
     is_read('tbl_saran', 'id_saran', $id_saran);
-    $saran = $this->AM->detailSaran($id_saran);
-    // print_r($saran);
+    // $saran = $this->AM->detailSaran($id_saran);
+
+    $saran = $this->Crud_model->listingOne('tbl_saran', 'id_saran', $id_saran);
     $data = [
       'saran'     => $saran,
       'content'   => 'admin/saran/detail'
