@@ -87,12 +87,12 @@
                                     <td class="rp"><?= 'Rp. ' . nominal($row->jlh_ibnusabil); ?></td>
 
                                     <td class="rp">
-                                        <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#ModalEdit<?= $row->id_mustahik ?>">
+                                        <button type="button" class="btn btn-success btn-xs" data-toggle="modal tooltip" data-placement="top" title="Edit" data-target="#ModalEdit<?= $row->id_mustahik ?>">
                                             <i class="fa fa-edit"></i>
                                         </button>
 
                                         <!-- <a href="<?= base_url($tombol['edit']) ?>" class="btn btn-success btn-xs"><i class="fa fa-edit"></i> Edit</a> -->
-                                        <a href="<?= base_url($tombol['delete'] . $row->id_mustahik) ?>" class="btn btn-danger btn-xs tombol-hapus"><i class="fa fa-trash"></i></a>
+                                        <a href="<?= base_url($tombol['delete'] . $row->id_mustahik) ?>" data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-xs tombol-hapus"><i class="fa fa-trash"></i></a>
                                     </td>
                                     <?php include('edit.php')
                                     ?>

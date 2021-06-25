@@ -15,12 +15,13 @@ class Admin_model extends CI_Model
     return $this->db->get()->result();
   }
 
-  function listPenyaluran()
+  function listPenyaluran($zis)
   {
     $this->db->select('tbl_penyaluran.*,
                             tbl_desa.nama_desa')
       ->from('tbl_penyaluran')
       ->join('tbl_desa', 'tbl_desa.id_desa = tbl_penyaluran.id_desa', 'LEFT')
+      ->where('tbl_penyaluran.dana', $zis)
       ->order_by('tbl_penyaluran.date_created', 'DESC');
     return $this->db->get()->result();
   }
@@ -45,13 +46,14 @@ class Admin_model extends CI_Model
     return $this->db->get()->result();
   }
 
-  function listZis()
+  function listPenyetoran($zis)
   {
-    $this->db->select('tbl_zis.*,
+    $this->db->select('tbl_penyetoran.*,
                             tbl_muzakki.nama_muzakki')
-      ->from('tbl_zis')
-      ->join('tbl_muzakki', 'tbl_muzakki.id_muzakki = tbl_zis.id_muzakki', 'LEFT')
-      ->order_by('tbl_zis.date_created', 'DESC');
+      ->from('tbl_penyetoran')
+      ->join('tbl_muzakki', 'tbl_muzakki.id_muzakki = tbl_penyetoran.id_muzakki', 'LEFT')
+      ->where('tbl_penyetoran.jenis_penyetoran', $zis)
+      ->order_by('tbl_penyetoran.date_created', 'DESC');
     return $this->db->get()->result();
   }
 
@@ -104,6 +106,43 @@ class Admin_model extends CI_Model
       ->join('tbl_user', 'tbl_user.id_user = tbl_saran.id_user', 'LEFT')
       ->where('id_saran', $id_saran);
     return $this->db->get()->row();
+  }
+
+  function checkWaqaf()
+  {
+    $query = $this->db->select('*')
+      ->from('tbl_waqaf')
+      ->where('id_desa', '')
+      ->where('tahun', '')
+      ->where('penggunaan', '')
+      ->where('waqif', '')
+      ->get();
+    return $query->row();
+  }
+
+  function cetakListPenyetoran($zis, $dari = null, $sampai = null)
+  {
+    $this->db->select('tbl_penyetoran.*, 
+                            tbl_muzakki.*')
+      ->from('tbl_penyetoran')
+      ->join('tbl_muzakki', 'tbl_muzakki.id_muzakki = tbl_penyetoran.id_muzakki', 'left')
+      ->where('tbl_penyetoran.jenis_penyetoran', $zis)
+      ->where('tbl_penyetoran.date_created >=', $dari)
+      ->where('tbl_penyetoran.date_created <=', $sampai);
+    return $this->db->get()->result();
+  }
+
+
+  function cetakListPenyaluran($zis, $dari = null, $sampai = null)
+  {
+    $this->db->select('tbl_penyaluran.*, 
+                            tbl_desa.*')
+      ->from('tbl_penyaluran')
+      ->join('tbl_desa', 'tbl_desa.id_desa = tbl_penyaluran.id_desa', 'left')
+      ->where('tbl_penyaluran.dana', $zis)
+      ->where('tbl_penyaluran.date_created >=', $dari)
+      ->where('tbl_penyaluran.date_created <=', $sampai);
+    return $this->db->get()->result();
   }
 }
 

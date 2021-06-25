@@ -11,6 +11,18 @@
                 <h4 class="modal-title">Tambah Kategori</h4>
             </div>
             <div class="modal-body">
+
+             <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="" class="pull-right">NIK</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" placeholder="NIK" name="nik" required>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-3">
@@ -54,6 +66,17 @@
                         </div>
                         <div class="col-md-9">
                             <input type="text" class="form-control" name="dusun" placeholder="Dusun" required>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="" class="pull-right">Alamat Lengkap</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="alamat"  placeholder="Alamat" required>
                         </div>
                     </div>
                 </div>

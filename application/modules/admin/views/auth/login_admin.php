@@ -22,7 +22,8 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="<?= base_url('assets/admin/') ?>index2.html"><b>SELAMAT</b> DATANG</a>
+            <b>SELAMAT DATANG </b>
+            <b>ADMIN KUA</b>
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">

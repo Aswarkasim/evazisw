@@ -162,7 +162,7 @@ class Berita extends CI_Controller
           'slug'            => $slug,
           'isi'             => $i->post('isi'),
         ];
-        $this->Crud_model->edit('tbl_berita', 'id_berita', $id_berita, $data);
+        $this->Crud_model->edit('tbl_berita', 'slug', $slug, $data);
         $this->session->set_flashdata('msg', 'Berita diedit');
         redirect('admin/berita/detail/' . $data['slug']);
       }

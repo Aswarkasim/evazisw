@@ -44,6 +44,8 @@ class Muzakki extends CI_Controller
       'jenis_kelamin'   => $i->post('jenis_kelamin'),
       'desa'            => $i->post('desa'),
       'dusun'           => $i->post('dusun'),
+      'nik'           => $i->post('nik'),
+      'alamat'           => $i->post('alamat'),
       'pekerjaan'       => $i->post('pekerjaan')
     ];
     $this->Crud_model->add('tbl_muzakki', $data);
@@ -60,6 +62,8 @@ class Muzakki extends CI_Controller
       'jenis_kelamin'   => $i->post('jenis_kelamin'),
       'desa'            => $i->post('desa'),
       'dusun'           => $i->post('dusun'),
+      'nik'           => $i->post('nik'),
+      'alamat'           => $i->post('alamat'),
       'pekerjaan'       => $i->post('pekerjaan')
     ];
     $this->Crud_model->edit('tbl_muzakki', 'id_muzakki', $id_muzakki, $data);

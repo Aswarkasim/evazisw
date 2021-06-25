@@ -25,27 +25,69 @@ $saran = $this->Crud_model->listingOneAll('tbl_saran', 'is_read', '0');
             <li class="treeview <?php if ($this->uri->segment(2) == "profil") {
                                     echo "active";
                                 } ?>">
-                <a href="#"><i class="fa fa-building"></i> <span>Zis</span>
+                <a href="#"><i class="fa fa-building"></i> <span>Zakat</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="<?php if ($this->uri->segment(2) == "zis") {
+                    <li class="<?php if ($this->uri->segment(2) == "penyetoran") {
                                     echo "active";
-                                } ?>"><a href="<?= base_url('admin/zis') ?>">Penyetoran</a></li>
+                                } ?>"><a href="<?= base_url('admin/penyetoran/index/zakat') ?>">Penyetoran</a></li>
 
                     <li class="<?php if ($this->uri->segment(3) == "penyaluran") {
                                     echo "active";
-                                } ?>"><a href="<?= base_url('admin/penyaluran') ?>">Penyaluran</a></li>
+                                } ?>"><a href="<?= base_url('admin/penyaluran/index/zakat') ?>">Penyaluran</a></li>
 
-                    <li class="<?php if ($this->uri->segment(3) == "mustahik") {
-                                    echo "active";
-                                } ?>"><a href="<?= base_url('admin/mustahik') ?>">Mustahik</a></li>
+                    <!-- <li class="<?php if ($this->uri->segment(3) == "mustahik") {
+                                        echo "active";
+                                    } ?>"><a href="<?= base_url('admin/mustahik') ?>">Mustahik</a></li> -->
+                </ul>
+            </li>
 
-                    <li class="<?php if ($this->uri->segment(3) == "desa") {
+            <li class="treeview <?php if ($this->uri->segment(2) == "profil") {
                                     echo "active";
-                                } ?>"><a href="<?= base_url('admin/desa') ?>">Desa</a></li>
+                                } ?>">
+                <a href="#"><i class="fa fa-hourglass"></i> <span>Infaq</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="<?php if ($this->uri->segment(2) == "penyetoran") {
+                                    echo "active";
+                                } ?>"><a href="<?= base_url('admin/penyetoran/index/infaq') ?>">Penyetoran</a></li>
+
+                    <li class="<?php if ($this->uri->segment(3) == "penyaluran") {
+                                    echo "active";
+                                } ?>"><a href="<?= base_url('admin/penyaluran/index/infaq') ?>">Penyaluran</a></li>
+
+                    <!-- <li class="<?php if ($this->uri->segment(3) == "mustahik") {
+                                        echo "active";
+                                    } ?>"><a href="<?= base_url('admin/mustahik') ?>">Mustahik</a></li> -->
+                </ul>
+            </li>
+
+            <li class="treeview <?php if ($this->uri->segment(2) == "profil") {
+                                    echo "active";
+                                } ?>">
+                <a href="#"><i class="fa fa-building"></i> <span>Sedekah</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="<?php if ($this->uri->segment(2) == "penyetoran") {
+                                    echo "active";
+                                } ?>"><a href="<?= base_url('admin/penyetoran/index/sedekah') ?>">Penyetoran</a></li>
+
+                    <li class="<?php if ($this->uri->segment(3) == "penyaluran") {
+                                    echo "active";
+                                } ?>"><a href="<?= base_url('admin/penyaluran/index/sedekah') ?>">Penyaluran</a></li>
+
+                    <!-- <li class="<?php if ($this->uri->segment(3) == "mustahik") {
+                                        echo "active";
+                                    } ?>"><a href="<?= base_url('admin/mustahik') ?>">Mustahik</a></li> -->
                 </ul>
             </li>
 
@@ -56,12 +98,27 @@ $saran = $this->Crud_model->listingOneAll('tbl_saran', 'is_read', '0');
                                         ?>"><i class="fa fa-area-chart"></i> <span>Waqaf</span>
                 </a></li>
 
+            <li class="<?php if ($this->uri->segment(2) == "laporan") {
+                            echo "active";
+                        }
+                        ?>"><a href="<?php echo base_url('admin/laporan')
+                                        ?>"><i class="fa fa-file"></i> <span>Laporan</span>
+                </a></li>
+
 
             <li class="<?php if ($this->uri->segment(2) == "muzakki") {
                             echo "active";
                         }
                         ?>"><a href="<?php echo base_url('admin/muzakki')
                                         ?>"><i class="fa fa-users"></i> <span>Muzakki</span>
+                </a></li>
+
+
+            <li class="<?php if ($this->uri->segment(2) == "desa") {
+                            echo "active";
+                        }
+                        ?>"><a href="<?php echo base_url('admin/desa')
+                                        ?>"><i class="fa fa-map"></i> <span>Desa</span>
                 </a></li>
 
 
@@ -76,24 +133,9 @@ $saran = $this->Crud_model->listingOneAll('tbl_saran', 'is_read', '0');
                 </a></li>
 
 
-            <li class="treeview <?php if ($this->uri->segment(2) == "profil") {
-                                    echo "active";
-                                } ?>">
-                <a href="#"><i class="fa fa-building"></i> <span>Profil</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li class="<?php if ($this->uri->segment(2) == "profil") {
-                                    echo "active";
-                                } ?>"><a href="<?= base_url('admin/profil') ?>">Profil</a></li>
 
-                    <li class="<?php if ($this->uri->segment(3) == "profil") {
-                                    echo "active";
-                                } ?>"><a href="<?= base_url('admin/profil/visimisi') ?>">Visi & Misi</a></li>
-                </ul>
-            </li>
+
+
 
 
 
@@ -116,6 +158,43 @@ $saran = $this->Crud_model->listingOneAll('tbl_saran', 'is_read', '0');
                     <li class="<?php if ($this->uri->segment(2) == "kategori") {
                                     echo "active";
                                 } ?>"><a href="<?= base_url('admin/kategori') ?>">Kategori</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview <?php if ($this->uri->segment(2) == "profil") {
+                                    echo "active";
+                                } ?>">
+                <a href="#"><i class="fa fa-building"></i> <span>Profil</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="<?php if ($this->uri->segment(2) == "profil") {
+                                    echo "active";
+                                } ?>"><a href="<?= base_url('admin/profil') ?>">Profil</a></li>
+
+                    <li class="<?php if ($this->uri->segment(3) == "profil") {
+                                    echo "active";
+                                } ?>"><a href="<?= base_url('admin/profil/visimisi') ?>">Visi & Misi</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview <?php if ($this->uri->segment(2) == "karyawan") {
+                                    echo "active";
+                                } ?>">
+                <a href="#"><i class="fa fa-users"></i> <span>Karyawan</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="<?php if ($this->uri->segment(2) == "karyawan") {
+                                    echo "active";
+                                } ?>"><a href="<?= base_url('admin/karyawan') ?>">Karyawan</a></li>
+                    <li class="<?php if ($this->uri->segment(2) == "struktur") {
+                                    echo "active";
+                                } ?>"><a href="<?= base_url('admin/struktur') ?>">Struktur Organisasi</a></li>
                 </ul>
             </li>
 

@@ -6,7 +6,7 @@
                     <span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">Edit Penyaluran</h4>
             </div>
-            <?= form_open(base_url($tombol['edit'] . '/' . $row->id_penyaluran)) ?>
+            <?= form_open(base_url($tombol['edit'] . $row->id_penyaluran)) ?>
             <div class="modal-body">
                 <div class="form-group">
                     <div class="row">

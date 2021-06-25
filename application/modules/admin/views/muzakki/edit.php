@@ -4,10 +4,21 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Tambah Kategori</h4>
+                <h4 class="modal-title">Edit</h4>
             </div>
             <?= form_open(base_url($tombol['edit'] . '/' . $row->id_muzakki)) ?>
             <div class="modal-body">
+             <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="" class="pull-right">NIK</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" value="<?= $row->nik; ?>" placeholder="NIK" name="nik" required>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-3">
@@ -51,6 +62,17 @@
                         </div>
                         <div class="col-md-9">
                             <input type="text" class="form-control" name="dusun" value="<?= $row->dusun; ?>" placeholder="Dusun" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="" class="pull-right">Alamat Lengkap</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="alamat" value="<?= $row->alamat; ?>" placeholder="Alamat" required>
                         </div>
                     </div>
                 </div>

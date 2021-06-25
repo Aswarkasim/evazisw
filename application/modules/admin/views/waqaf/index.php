@@ -8,14 +8,14 @@
 
         <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Manajemen Desa</h3>
+                <h3 class="box-title">Manajemen Waqaf</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
 
                 <p>
-                    <!-- <a href="<?= base_url($tombol['add']) ?>" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah</a> -->
-                    <?php include('add.php') ?>
+                    <a href="<?= base_url($tombol['add']) ?>" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Tambah</a>
+
                 </p>
 
                 <div class="table-responsive">
@@ -29,7 +29,7 @@
                                 <th>Lokasi</th>
                                 <th>Luas</th>
                                 <th>Penggunaan</th>
-                                <th>Wakif</th>
+                                <th>Waqif</th>
                                 <th>Nadzir</th>
                                 <th>Nomor</th>
                                 <th>Tanggal</th>
@@ -48,19 +48,17 @@
                                     <td><?= $row->lokasi; ?></td>
                                     <td><?= $row->luas . ' m'; ?></td>
                                     <td><?= $row->penggunaan; ?></td>
-                                    <td><?= $row->wakif; ?></td>
+                                    <td><?= $row->waqif; ?></td>
                                     <td><?= $row->nadzir; ?></td>
                                     <td><?= $row->nomor; ?></td>
                                     <td><?= $row->tgl_waqaf; ?></td>
 
 
                                     <td>
-                                        <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#ModalEdit<?= $row->id_waqaf ?>">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
 
-                                        <!-- <a href="<?= base_url($tombol['edit']) ?>" class="btn btn-success btn-xs"><i class="fa fa-edit"></i> Edit</a> -->
-                                        <a href="<?= base_url($tombol['delete'] . $row->id_waqaf) ?>" class="btn btn-danger btn-xs tombol-hapus"><i class="fa fa-trash"></i></a>
+
+                                        <a href="<?= base_url($tombol['add'] . '/' . $row->id_waqaf) ?>" class="btn btn-success btn-xs"><i class="fa fa-edit"></i> Edit</a>
+                                        <a href="<?= base_url($tombol['delete'] . $row->id_waqaf) ?>" data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-xs tombol-hapus"><i class="fa fa-trash"></i></a>
                                     </td>
                                     <?php include('edit.php')
                                     ?>

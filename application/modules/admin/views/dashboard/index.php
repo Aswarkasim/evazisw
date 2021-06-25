@@ -9,7 +9,7 @@
         <div class="alert alert-success">
             <p>
                 <i class="fa fa-user"></i>
-                Selamat datang <?= $user->nama_admin ?> diaplikasi KUA kecamatan sendana. Download panduan penggunaan <a href="<?= base_url('admin/dashboard/panduan') ?>">di sini <i class="fa fa-download"></i></a>
+                Selamat datang <?= $user->nama_admin ?> diaplikasi KUA Kecamatan Binuang. Download panduan penggunaan <a href="<?= base_url('admin/dashboard/panduan') ?>">di sini <i class="fa fa-download"></i></a>
             </p>
         </div>
     </div>
@@ -19,14 +19,13 @@
         <!-- small box -->
         <div class="small-box bg-aqua">
             <div class="inner">
-                <h3><?= count($berita) ?></h3>
+                <h3><?= count($saran) ?></h3>
 
-                <p>Berita</p>
+                <p>Saran</p>
             </div>
             <div class="icon">
-                <i class="ion ion-bag"></i>
+                <i class="fa fa-ticket"></i>
             </div>
-            <a href="<?= base_url('admin/berita') ?>" class="small-box-footer">Lihat Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -34,14 +33,13 @@
         <!-- small box -->
         <div class="small-box bg-green">
             <div class="inner">
-                <h3><?= count($jadwal) ?></h3>
+                <h3><?= count($desa) ?></h3>
 
-                <p>Jadwal Pernikahan</p>
+                <p>Desa</p>
             </div>
             <div class="icon">
-                <i class="fa fa-download"></i>
+                <i class="fa fa-map"></i>
             </div>
-            <a href="<?= base_url('admin/jadwal') ?>" class="small-box-footer">Lihat Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -54,9 +52,8 @@
                 <p>Karyawan</p>
             </div>
             <div class="icon">
-                <i class="fa fa-upload"></i>
+                <i class="fa fa-users"></i>
             </div>
-            <a href="<?= base_url('admin/karyawan') ?>" class="small-box-footer">Lihat Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -64,14 +61,13 @@
         <!-- small box -->
         <div class="small-box bg-red">
             <div class="inner">
-                <h3><?= count($dataUser) ?></h3>
+                <h3><?= count($muzakki) ?></h3>
 
-                <p>User</p>
+                <p>Muzakki</p>
             </div>
             <div class="icon">
                 <i class="fa fa-user"></i>
             </div>
-            <a href="<?= base_url('admin/user') ?>" class="small-box-footer">Lihat Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
