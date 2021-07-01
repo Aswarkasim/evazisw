@@ -51,6 +51,18 @@
                                     <option value="Admin" <?php if ($admin->role == "Admin") {
                                                                 echo "selected";
                                                             } ?>>Admin</option>
+                                    <option value="Zakat" <?php if ($admin->role == "Zakat") {
+                                                                echo "selected";
+                                                            } ?>>Zakat</option>
+                                    <option value="Infaq" <?php if ($admin->role == "Infaq") {
+                                                                echo "selected";
+                                                            } ?>>Infaq</option>
+                                    <option value="Sedekah" <?php if ($admin->role == "Sedekah") {
+                                                                echo "selected";
+                                                            } ?>>Sedekah</option>
+                                    <option value="Waqaf" <?php if ($admin->role == "Waqaf") {
+                                                                echo "selected";
+                                                            } ?>>Waqaf</option>
                                 </select>
                             </div>
                         </div>

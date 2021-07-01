@@ -47,6 +47,10 @@
                                     <option value="none">--Role--</option>
                                     <option value="User">User</option>
                                     <option value="Admin">Admin</option>
+                                    <option value="Zakat">Zakat</option>
+                                    <option value="Infaq">Infaq</option>
+                                    <option value="Sedekah">Sedekah</option>
+                                    <option value="Waqaf">Waqaf</option>
                                 </select>
                             </div>
                         </div>
