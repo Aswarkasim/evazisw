@@ -99,13 +99,13 @@ class Berita extends CI_Controller
     $this->load->view('admin/layout/wrapper', $data, FALSE);
   }
 
-  public function edit($slug)
+  public function edit($id_berita)
   {
 
     $this->load->helper('string');
 
     $kategori = $this->Crud_model->listing('tbl_kategori');
-    $berita = $this->Crud_model->listingOne('tbl_berita', 'slug', $slug);
+    $berita = $this->Crud_model->listingOne('tbl_berita', 'id_berita', $id_berita);
 
     $required = '%s tidak boleh kosong';
     $valid = $this->form_validation;
@@ -147,7 +147,7 @@ class Berita extends CI_Controller
             'isi'             => $i->post('isi'),
             'gambar'          => $config['upload_path'] . $upload_data['uploads']['file_name']
           ];
-          $this->Crud_model->edit('tbl_berita', 'slug', $slug, $data);
+          $this->Crud_model->edit('tbl_berita', 'id_berita', $id_berita, $data);
           $this->session->set_flashdata('msg', 'Berita diedit');
           redirect('admin/berita/detail/' . $data['slug']);
         }
@@ -162,14 +162,14 @@ class Berita extends CI_Controller
           'slug'            => $slug,
           'isi'             => $i->post('isi'),
         ];
-        $this->Crud_model->edit('tbl_berita', 'slug', $slug, $data);
+        $this->Crud_model->edit('tbl_berita', 'id_berita', $id_berita, $data);
         $this->session->set_flashdata('msg', 'Berita diedit');
         redirect('admin/berita/detail/' . $data['slug']);
       }
     }
     $data = [
       'title'    => 'Edit Berita',
-      'edit'    => 'admin/berita/edit/',
+      'edit'    => 'admin/berita/edit/' . $id_berita,
       'back'    => 'admin/berita',
       'kategori'    => $kategori,
       'berita'    => $berita,

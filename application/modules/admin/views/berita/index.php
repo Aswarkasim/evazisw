@@ -23,9 +23,9 @@
         foreach ($berita as $row) { ?>
           <tr>
             <td><?= $no++; ?></td>
-            <td><a href="<?= base_url('admin/berita/detail/' . $row->slug) ?>"><strong><?= $row->judul_berita; ?></strong></a></td>
+            <td><a href="<?= base_url('admin/berita/detail/' . $row->id_berita) ?>"><strong><?= $row->judul_berita; ?></strong></a></td>
             <td>
-              <a class="btn btn-success" href="<?= base_url('admin/berita/edit/' . $row->slug) ?>"><i class="fa fa-edit"></i> Edit</a>
+              <a class="btn btn-success" href="<?= base_url('admin/berita/edit/' . $row->id_berita) ?>"><i class="fa fa-edit"></i> Edit</a>
               <a class="btn btn-danger tombol-hapus" href="<?= base_url('admin/berita/delete/' . $row->id_berita) ?>"><i class="fa fa-trash"></i> Hapus</a>
             </td>
           </tr>

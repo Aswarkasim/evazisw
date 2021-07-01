@@ -26,6 +26,7 @@
             <div class="icon">
                 <i class="fa fa-ticket"></i>
             </div>
+            <a href="<?= base_url('admin/saran') ?>" class="small-box-footer">Lihat Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -40,6 +41,7 @@
             <div class="icon">
                 <i class="fa fa-map"></i>
             </div>
+            <a href="<?= base_url('admin/desa') ?>" class="small-box-footer">Lihat Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -54,6 +56,7 @@
             <div class="icon">
                 <i class="fa fa-users"></i>
             </div>
+            <a href="<?= base_url('admin/karyawan') ?>" class="small-box-footer">Lihat Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -68,6 +71,7 @@
             <div class="icon">
                 <i class="fa fa-user"></i>
             </div>
+            <a href="<?= base_url('admin/muzakki') ?>" class="small-box-footer">Lihat Selengkapnya <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->

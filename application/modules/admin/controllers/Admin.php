@@ -91,8 +91,8 @@ class Admin extends CI_Controller
                 $password = $admin->password;
             }
             $data = [
-                'admin'       => $admin,
-                'admin'     => $i->post('admin'),
+                'id_admin'       => $id_admin,
+                'nama_admin'     => $i->post('nama_admin'),
                 'email'         => $i->post('email'),
                 'password'      => $password,
                 'role'          => $i->post('role'),
@@ -100,13 +100,13 @@ class Admin extends CI_Controller
             ];
             $this->Crud_model->edit('tbl_admin', 'id_admin', $id_admin, $data);
             $this->session->set_flashdata('msg', 'diedit');
-            redirect('admin/admin/edit/' . $admin, 'refresh');
+            redirect('admin/admin/edit/' . $id_admin, 'refresh');
         }
     }
 
     function delete($admin)
     {
-        $this->Crud_model->delete('tbl_admin', 'admin', $admin);
+        $this->Crud_model->delete('tbl_admin', 'id_admin', $admin);
         $this->session->set_flashdata('msg', 'dihapus');
         redirect('admin/admin');
     }
