@@ -11,9 +11,13 @@ $konfigurasi = $this->Crud_model->listingOne('tbl_konfigurasi', 'id_konfigurasi'
     <!-- Logo -->
     <a href="#" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>KU</b>A</span>
+        <span class="logo-mini">
+            <img src="<?= base_url('assets/img/logo-admin.png'); ?>" width="100%" alt="">
+        </span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>KU</b>A</span>
+        <span class="logo-lg">
+            <img src="<?= base_url('assets/img/logo-lg.png'); ?>" width="100%" alt="">
+        </span>
     </a>
 
     <!-- Header Navbar -->
