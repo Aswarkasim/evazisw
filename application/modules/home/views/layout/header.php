@@ -59,6 +59,11 @@
         <li class="nav-item <?php if ($this->uri->segment('2') == 'visimisi') {
                               echo "active";
                             } ?>"><a class="nav-link" href="<?= base_url('home/laporan'); ?>"><strong> Laporan Zisw</strong></a></li>
+
+        <li class="nav-item <?php if ($this->uri->segment('2') == 'waqaf') {
+                              echo "active";
+                            } ?>"><a class="nav-link" href="<?= base_url('home/waqaf'); ?>"><strong> Waqaf</strong></a></li>
+
         <li class="nav-item <?php if ($this->uri->segment('2') == 'saran') {
                               echo "active";
                             } ?>"><a class="nav-link" href="<?= base_url('home/saran'); ?>"><strong> Hubungi Kami</strong></a></li>

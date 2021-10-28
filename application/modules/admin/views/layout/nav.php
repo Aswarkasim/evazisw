@@ -103,11 +103,33 @@ $saran = $this->Crud_model->listingOneAll('tbl_saran', 'is_read', '0');
                 </li>
             <?php }
             if ($role == 'Waqaf' || $role == 'Admin') { ?>
+
+                <!-- <li class="treeview <?php if ($this->uri->segment(2) == "waqaf") {
+                                                echo "active";
+                                            } ?>">
+                    <a href="#"><i class="fa fa-area-chart"></i> <span>Waqaf</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li class="<?php if ($this->uri->segment(2) == "waqaf") {
+                                        echo "active";
+                                    } ?>"><a href="<?= base_url('admin/waqaf') ?>">Penyetoran</a></li>
+
+                        <li class="<?php if ($this->uri->segment(3) == "penyaluran") {
+                                        echo "active";
+                                    } ?>"><a href="<?= base_url('admin/penyaluran/index/waqaf') ?>">Penyaluran</a></li>
+
+
+                    </ul>
+                </li> -->
+
                 <li class="<?php if ($this->uri->segment(2) == "waqaf") {
                                 echo "active";
                             }
                             ?>"><a href="<?php echo base_url('admin/waqaf')
-                                            ?>"><i class="fa fa-area-chart"></i> <span>Waqaf</span>
+                                                ?>"><i class="fa fa-area-chart"></i> <span>Waqaf</span>
                     </a></li>
             <?php } ?>
 

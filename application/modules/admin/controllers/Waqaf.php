@@ -42,12 +42,14 @@ class Waqaf extends CI_Controller
 
       $waqaf = $this->AM->checkWaqaf();
 
-      if (count($waqaf) <= 0) {
+      if (!$waqaf) {
         $dataWaqaf = [
           'id_waqaf' => random_string()
         ];
         $this->Crud_model->add('tbl_waqaf', $dataWaqaf);
         $waqaf = $this->Crud_model->listingOne('tbl_waqaf', 'id_waqaf', $dataWaqaf['id_waqaf']);
+      } else {
+        $waqaf = $this->Crud_model->listingOne('tbl_waqaf', 'id_waqaf', $waqaf->id_waqaf);
       }
     } else {
       $waqaf = $this->Crud_model->listingOne('tbl_waqaf', 'id_waqaf', $id_waqaf);
@@ -159,6 +161,17 @@ class Waqaf extends CI_Controller
     redirect('admin/waqaf');
   }
 
+  function detail($id_waqaf)
+  {
+
+    $waqaf = $this->Crud_model->listingOne('tbl_waqaf', 'id_waqaf', $id_waqaf);
+    $data = [
+      'waqaf'   => $waqaf,
+      'content'  => 'admin/waqaf/detail'
+    ];
+    $this->load->view('/layout/wrapper', $data, FALSE);
+  }
+
   function delete($id_waqaf)
   {
     $this->Crud_model->delete('tbl_waqaf', 'id_waqaf', $id_waqaf);
@@ -202,5 +215,11 @@ class Waqaf extends CI_Controller
   {
     $id_nadzir = $this->input->post('id_nadzir');
     $this->Crud_model->delete('tbl_nadzir', 'id_nadzir', $id_nadzir);
+  }
+
+  function is_done($id_waqaf, $value)
+  {
+    __is_boolean('tbl_waqaf', 'id_waqaf', $id_waqaf, 'is_done', $value);
+    redirect('admin/waqaf/detail/' . $id_waqaf);
   }
 }

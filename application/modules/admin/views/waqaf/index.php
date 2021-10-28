@@ -24,14 +24,11 @@
                         <thead>
 
                             <tr class="bg-primary">
-                                <th width="40px">No</th>
-                                <th>Nama Desa</th>
-                                <th>Lokasi</th>
-                                <th>Luas</th>
-                                <th>Penggunaan</th>
-                                <th>Waqif</th>
-                                <th>Nadzir</th>
+                                <th width="40px">#</th>
                                 <th>Nomor</th>
+                                <th>Waqif</th>
+                                <th>Nama Desa</th>
+                                <th>Penggunaan</th>
                                 <th>Tanggal</th>
                                 <th width="100px">Aksi</th>
                             </tr>
@@ -44,13 +41,10 @@
                             foreach ($waqaf as $row) { ?>
                                 <tr>
                                     <td><?= $no++; ?></td>
-                                    <td><?= $row->nama_desa; ?></td>
-                                    <td><?= $row->lokasi; ?></td>
-                                    <td><?= $row->luas . ' m'; ?></td>
-                                    <td><?= $row->penggunaan; ?></td>
-                                    <td><?= $row->waqif; ?></td>
-                                    <td><?= $row->nadzir; ?></td>
                                     <td><?= $row->nomor; ?></td>
+                                    <td><a href="<?= base_url('admin/waqaf/detail/'.$row->id_waqaf); ?>"><strong><?= $row->waqif; ?></strong></a></td>
+                                    <td><?= $row->nama_desa; ?></td>
+                                    <td><?= $row->penggunaan; ?></td>
                                     <td><?= $row->tgl_waqaf; ?></td>
 
 

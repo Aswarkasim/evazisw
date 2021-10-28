@@ -37,15 +37,13 @@
                                 <td><?= 'Rp. ' . nominal($row->rupiah) ?></td>
                                 <td><?= $row->jumlah_orang   ?></td>
                                 <td>
-                                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal tooltip" data-placement="top" title="Edit" data-target="#ModalEdit<?= $row->id_penyaluran ?>">
+                                    <!-- <button type="button" class="btn btn-success btn-xs" data-toggle="modal tooltip" data-placement="top" title="Edit" data-target="#ModalEdit<?= $row->id_penyaluran ?>">
                                         <i class="fa fa-edit"></i>Edit
                                     </button>
-
-                                    <!-- <a href="<?= base_url($tombol['edit']) ?>" class="btn btn-success btn-xs"><i class="fa fa-edit"></i> Edit</a> -->
+ -->
+                                    <a href="<?= base_url($tombol['edit'] . $row->id_penyaluran) ?>" class="btn btn-success btn-xs"><i class="fa fa-edit"></i> Edit</a>
                                     <a href="<?= base_url($tombol['delete'] . $row->id_penyaluran) ?>" data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-xs tombol-hapus"><i class="fa fa-trash"></i> Hapus</a>
                                 </td>
-                                <?php include('edit.php')
-                                ?>
                             </tr>
                         <?php $no++;
                         } ?>

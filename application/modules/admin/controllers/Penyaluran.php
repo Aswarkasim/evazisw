@@ -17,8 +17,8 @@ class Penyaluran extends CI_Controller
   public function index($zis)
   {
     $tombol  = [
-      'add'     => 'admin/penyaluran/add/'.$zis,
-      'edit'    => 'admin/penyaluran/edit/',
+      'add'     => 'admin/penyaluran/add/' . $zis,
+      'edit'    => 'admin/penyaluran/edit_page/',
       'delete'  => 'admin/penyaluran/delete/'
     ];
 
@@ -51,8 +51,24 @@ class Penyaluran extends CI_Controller
     ];
     $this->Crud_model->add('tbl_penyaluran', $data);
     $this->session->set_flashdata('msg', 'penyaluran berhasil ditambah');
-    redirect('admin/penyaluran/index/'.$zis);
+    redirect('admin/penyaluran/index/' . $zis);
   }
+
+  function edit_page($id_penyaluran)
+  {
+    $zis = $this->Crud_model->listingOne('tbl_penyaluran', 'id_penyaluran', $id_penyaluran);
+    $muzakki = $this->Crud_model->listing('tbl_muzakki');
+    $desa = $this->Crud_model->listing('tbl_desa');
+    $data = [
+      'zis'       => $zis,
+      'desa'       => $desa,
+      'muzakki'       => $muzakki,
+      'content'  => 'admin/penyaluran/edit'
+    ];
+    $this->load->view('/layout/wrapper', $data, FALSE);
+  }
+
+
   function edit($id_penyaluran)
   {
 
@@ -67,7 +83,7 @@ class Penyaluran extends CI_Controller
     ];
     $this->Crud_model->edit('tbl_penyaluran', 'id_penyaluran', $id_penyaluran, $data);
     $this->session->set_flashdata('msg', 'penyaluran berhasil diedit');
-    redirect('admin/penyaluran/index/'.$zis->dana);
+    redirect('admin/penyaluran/index/' . $zis->dana);
   }
 
   function delete($id_penyaluran)

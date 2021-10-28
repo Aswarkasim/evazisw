@@ -17,6 +17,15 @@ function is_logged_in_user()
     }
 }
 
+function __is_boolean($table, $where, $id, $field, $value)
+{
+    $ci = get_instance();
+    $data = [
+        $field => $value
+    ];
+    $ci->Crud_model->edit($table, $where, $id, $data);
+}
+
 function post($name)
 {
     $ci = get_instance();

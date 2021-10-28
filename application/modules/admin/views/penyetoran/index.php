@@ -45,15 +45,14 @@
 
 
                                     <td>
-                                        <button type="button" class="btn btn-success btn-xs" data-toggle="modal tooltip" data-placement="top" title="Edit" data-target="#ModalEdit<?= $row->id_penyetoran ?>">
+                                        <a href="<?= base_url('admin/penyetoran/edit_page/' . $row->id_penyetoran); ?>" class="btn btn-success btn-xs">
                                             <i class="fa fa-edit"></i>
-                                        </button>
+                                        </a>
 
                                         <!-- <a href="<?= base_url($tombol['edit']) ?>" class="btn btn-success btn-xs"><i class="fa fa-edit"></i> Edit</a> -->
                                         <a href="<?= base_url($tombol['delete'] . $row->id_penyetoran) ?>" data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-xs tombol-hapus"><i class="fa fa-trash"></i></a>
                                     </td>
-                                    <?php include('edit.php')
-                                    ?>
+
                                     </td>
                                 </tr>
                             <?php } ?>

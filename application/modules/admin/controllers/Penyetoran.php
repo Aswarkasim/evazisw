@@ -17,7 +17,7 @@ class Penyetoran extends CI_Controller
   public function index($zis)
   {
     $tombol  = [
-      'add'     => 'admin/penyetoran/add/'.$zis,
+      'add'     => 'admin/penyetoran/add/' . $zis,
       'edit'    => 'admin/penyetoran/edit/',
       'delete'  => 'admin/penyetoran/delete/'
     ];
@@ -50,7 +50,19 @@ class Penyetoran extends CI_Controller
     ];
     $this->Crud_model->add('tbl_penyetoran', $data);
     $this->session->set_flashdata('msg', 'penyetoran berhasil ditambah');
-    redirect('admin/penyetoran/index/'.$zis);
+    redirect('admin/penyetoran/index/' . $zis);
+  }
+
+  function edit_page($id_penyetoran)
+  {
+    $zis = $this->Crud_model->listingOne('tbl_penyetoran', 'id_penyetoran', $id_penyetoran);
+    $muzakki = $this->Crud_model->listing('tbl_muzakki');
+    $data = [
+      'zis'       => $zis,
+      'muzakki'       => $muzakki,
+      'content'  => 'admin/penyetoran/edit'
+    ];
+    $this->load->view('/layout/wrapper', $data, FALSE);
   }
 
 
@@ -66,7 +78,7 @@ class Penyetoran extends CI_Controller
     ];
     $this->Crud_model->edit('tbl_penyetoran', 'id_penyetoran', $id_penyetoran, $data);
     $this->session->set_flashdata('msg', 'penyetoran berhasil diedit');
-    redirect('admin/penyetoran');
+    redirect('admin/penyetoran/index/' . $data['jenis_penyetoran']);
   }
 
   function delete($id_penyetoran)
