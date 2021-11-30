@@ -43,7 +43,7 @@
 
         <li class="nav-item <?php if ($this->uri->segment('2') == 'index') {
                               echo "active";
-                            } ?>"><a class="nav-link" href="<?= base_url('home/index'); ?>"><strong> Beranda</strong></a></li>
+                            } ?>"><a class="nav-link" href="<?= base_url('home/index'); ?>"><strong> Adakah</strong></a></li>
         <li class="nav-item <?php if ($this->uri->segment('2') == 'berita') {
                               echo "active";
                             } ?>"><a class="nav-link" href="<?= base_url('home/berita'); ?>"><strong> Berita</strong></a></li>

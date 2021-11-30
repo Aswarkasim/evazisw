@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Cetak Laporan</title>
+  <title>Cetak Anggota</title>
   <link rel="stylesheet" href="<?= base_url('assets/admin/') ?>bower_components/bootstrap/dist/css/bootstrap.min.css">
   <style type="text/css">
     /* body {
@@ -54,12 +54,11 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th width="40px">No</th>
+          <th width="40px">#</th>
+          <th>Nomor</th>
+          <th>Waqif</th>
           <th>Nama Desa</th>
-          <th>Dana</th>
-          <th>Mustahik</th>
-          <th>Jumlah Dana</th>
-          <th>Jumlah Orang</th>
+          <th>Penggunaan</th>
           <th>Tanggal</th>
         </tr>
       </thead>
@@ -67,13 +66,12 @@
         <?php $no = 1;
         foreach ($cetak as $row) { ?>
           <tr>
-            <td><?= $no; ?></td>
-            <td><?= $row->nama_desa ?><br></td>
-            <td><?= $row->dana ?></td>
-            <td><?= $row->mustahik ?></td>
-            <td><?= $row->rupiah ?></td>
-            <td><?= $row->jumlah_orang ?></td>
-            <td><?= format_indo($row->date_created) ?></td>
+            <td><?= $no++; ?></td>
+            <td><?= $row->nomor; ?></td>
+            <td><?= $row->waqif; ?></strong></a></td>
+            <td><?= $row->nama_desa; ?></td>
+            <td><?= $row->penggunaan; ?></td>
+            <td><?= $row->tgl_waqaf; ?></td>
           </tr>
         <?php $no++;
         } ?>

@@ -144,6 +144,18 @@ class Admin_model extends CI_Model
       ->where('tbl_penyaluran.date_created <=', $sampai);
     return $this->db->get()->result();
   }
+
+  function cetakWaqaf($dari = null, $sampai = null)
+  {
+    $this->db->select('tbl_waqaf.*,
+                            tbl_desa.nama_desa')
+      ->from('tbl_waqaf')
+      ->join('tbl_desa', 'tbl_desa.id_desa = tbl_waqaf.id_desa', 'LEFT')
+      ->where('tbl_waqaf.date_created >=', $dari)
+      ->where('tbl_waqaf.date_created <=', $sampai)
+      ->order_by('tbl_waqaf.date_created', 'DESC');
+    return $this->db->get()->result();
+  }
 }
 
 /* End of file ModelName.php */

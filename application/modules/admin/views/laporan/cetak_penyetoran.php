@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Cetak Anggota</title>
+  <title>Cetak Laporan</title>
   <link rel="stylesheet" href="<?= base_url('assets/admin/') ?>bower_components/bootstrap/dist/css/bootstrap.min.css">
   <style type="text/css">
     /* body {

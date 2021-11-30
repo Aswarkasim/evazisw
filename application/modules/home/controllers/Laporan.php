@@ -46,24 +46,35 @@ class Laporan extends CI_Controller
 
     $title = '';
 
-    if ($transaksi == 'penyetoran') {
-      $cetak = $this->AM->cetakListPenyetoran($zis, $dari, $sampai);
+    if ($zis == "Waqaf") {
+      $cetak = $this->AM->cetakWaqaf($dari, $sampai);
 
       $data = [
         'title'     => $title,
-        'cetak' => $cetak,
+        'cetak'   => $cetak,
         'konfigurasi' => $konfigurasi,
       ];
-      $this->load->view('home/laporan/cetak_penyetoran', $data, FALSE);
+      $this->load->view('admin/laporan/cetak_waqaf', $data, FALSE);
     } else {
-      $cetak = $this->AM->cetakListPenyaluran($zis, $dari, $sampai);
+      if ($transaksi == 'penyetoran') {
+        $cetak = $this->AM->cetakListPenyetoran($zis, $dari, $sampai);
 
-      $data = [
-        'title'     => $title,
-        'cetak' => $cetak,
-        'konfigurasi' => $konfigurasi,
-      ];
-      $this->load->view('home/laporan/cetak_penyaluran', $data, FALSE);
+        $data = [
+          'title'     => $title,
+          'cetak' => $cetak,
+          'konfigurasi' => $konfigurasi,
+        ];
+        $this->load->view('home/laporan/cetak_penyetoran', $data, FALSE);
+      } else {
+        $cetak = $this->AM->cetakListPenyaluran($zis, $dari, $sampai);
+
+        $data = [
+          'title'     => $title,
+          'cetak' => $cetak,
+          'konfigurasi' => $konfigurasi,
+        ];
+        $this->load->view('home/laporan/cetak_penyaluran', $data, FALSE);
+      }
     }
   }
 
